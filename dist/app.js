@@ -15,7 +15,6 @@ class App {
     start() {
         return __awaiter(this, void 0, void 0, function* () {
             const upshot = yield (new prompt_service_1.PromptServise()).input('Тестовое число', 'number');
-            console.log(upshot);
         });
     }
 }
