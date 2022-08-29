@@ -1,6 +1,8 @@
+import { PromptServise } from "./core/prompt/prompt.service"
+
 export class App {
-    start() {
-        console.log('Project start!')
+    async start() {
+        const upshot = await (new PromptServise()).input<number>('Тестовое число', 'number')
     }
 }
 new App().start()
