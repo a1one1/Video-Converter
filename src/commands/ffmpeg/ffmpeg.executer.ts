@@ -28,9 +28,9 @@ export class FfmpegExecuter extends CommandExecutor<IFfmpegInput> {
             .output(output)
         return { command: 'ffmpeg', args, output }
     }
-    protected spawn({ output, commands, args }: any): ChildProcessWithoutNullStreams {
+    protected spawn({ output, command, args }: ICommandExecuterFfmpeg): ChildProcessWithoutNullStreams {
         this.fileService.deleteFileIfExists(output)
-        return spawn(commands, args)
+        return spawn(command, args)
     }
     protected processStream(stream: ChildProcessWithoutNullStreams, logger: IStreamLogger): void {
         const handler = new StreamHandler(logger)

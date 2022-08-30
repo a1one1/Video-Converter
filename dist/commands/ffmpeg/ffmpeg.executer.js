@@ -39,9 +39,9 @@ class FfmpegExecuter extends command_executor_1.CommandExecutor {
             .output(output);
         return { command: 'ffmpeg', args, output };
     }
-    spawn({ output, commands, args }) {
+    spawn({ output, command, args }) {
         this.fileService.deleteFileIfExists(output);
-        return (0, child_process_1.spawn)(commands, args);
+        return (0, child_process_1.spawn)(command, args);
     }
     processStream(stream, logger) {
         const handler = new stream_handler_1.StreamHandler(logger);
